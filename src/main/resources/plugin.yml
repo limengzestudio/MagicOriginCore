@@ -4,6 +4,7 @@ main: today.iqgod.magicorigin.Main
 api-version: 1.16
 prefix: MoCore
 authors: [ BugmakerX ]
+depend: [ PlaceholderAPI ]
 
 permissions:
   mocore.*:
