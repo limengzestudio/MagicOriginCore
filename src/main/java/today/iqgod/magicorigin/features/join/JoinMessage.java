@@ -1,6 +1,8 @@
 package today.iqgod.magicorigin.features.join;
 
+import me.clip.placeholderapi.libs.kyori.adventure.platform.facet.Facet;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -32,7 +34,9 @@ public class JoinMessage implements Listener {
 
         if(player.hasPermission(perm_vip))
         {
-            e.setJoinMessage("");
+            e.setJoinMessage("[" + ChatColor.GREEN + "] " + ChatColor.RESET +
+                "[" + ChatColor.YELLOW + "VIP" + "] " + ChatColor.RESET +
+                    player.getName() + " 加入游戏");
         }
     }
 }
