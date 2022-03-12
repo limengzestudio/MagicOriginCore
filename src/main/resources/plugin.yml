@@ -12,3 +12,11 @@ permissions:
     children:
       mocore.prefix.*:
         description: prefix
+      mocore.bypass.*:
+        description: bypass
+
+  mocore.bypass.*:
+    children:
+      mocore.bypass.blacklist:
+        description: bypass blacklist
+        default: op

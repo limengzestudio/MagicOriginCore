@@ -3,3 +3,4 @@ features:
     enabled: true
   security:
     noPluginCrack: true
+    IntelliKBlackList: false
