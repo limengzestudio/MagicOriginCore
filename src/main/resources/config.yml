@@ -1,3 +1,5 @@
 features:
   joinMessage:
     enabled: true
+  security:
+    noPluginCrack: true
