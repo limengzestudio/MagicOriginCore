@@ -6,10 +6,21 @@ prefix: MoCore
 authors: [ BugmakerX ]
 depend: [ PlaceholderAPI ]
 
+commands:
+  staffchat:
+    aliases:
+      - sc
+    permission: mocore.admin
+    permission-message: ""
+    usage: /sc <message>
+
+
 permissions:
   mocore.*:
     description: NMSL
     children:
+      mocore.admin:
+        default: op
       mocore.prefix.*:
         description: prefix
       mocore.bypass.*:

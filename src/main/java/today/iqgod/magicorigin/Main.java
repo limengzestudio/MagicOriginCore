@@ -4,6 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
+import today.iqgod.magicorigin.commands.CommandManager;
 import today.iqgod.magicorigin.features.FeatureManager;
 
 public final class Main extends JavaPlugin {
@@ -24,6 +25,7 @@ public final class Main extends JavaPlugin {
             config = getConfig();
 
             FeatureManager.loadFeatures();
+            CommandManager.setup();
 
             System.out.println("[MoCore] MoCore 加载完成");
         } catch (Exception ex) {
