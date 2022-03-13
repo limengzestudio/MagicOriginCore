@@ -14,22 +14,36 @@ public final class Main extends JavaPlugin {
     public static boolean PAPI_enabled;
 
     @Override
+    public void onLoad()
+    {
+        try{
+
+            instance = this;
+
+            saveDefaultConfig();
+
+            System.out.println("[MoCore] 插件加载完成");
+        } catch (Exception e) {
+            System.out.println("[MoCore] 插件加载失败");
+            e.printStackTrace();
+        }
+    }
+
+    @Override
     public void onEnable() {
         // Plugin startup logic
         try
         {
             PAPI_enabled = Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null;
-            instance = this;
 
-            saveDefaultConfig();
             config = getConfig();
 
             FeatureManager.loadFeatures();
             CommandManager.setup();
 
-            System.out.println("[MoCore] MoCore 加载完成");
+            System.out.println("[MoCore] MoCore 已启用");
         } catch (Exception ex) {
-            System.out.println("Unable to load MoCore");
+            System.out.println("[MoCore] 无法启用MoCore");
             ex.printStackTrace();
             Bukkit.getPluginManager().disablePlugin(this);
         }
@@ -38,5 +52,6 @@ public final class Main extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        saveDefaultConfig();
     }
 }
