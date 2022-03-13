@@ -6,7 +6,7 @@
 
     <groupId>today.iqgod</groupId>
     <artifactId>MagicOrigin</artifactId>
-    <version>v0.1.0</version>
+    <version>v1.0.0-rc2</version>
     <packaging>jar</packaging>
 
     <name>MagicOriginCore</name>
