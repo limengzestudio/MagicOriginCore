@@ -19,6 +19,6 @@ public class noPluginCrack implements Listener {
             return;
         }
 
-        e.setMessage("Unknown command. Type /help for help.");
+        e.setMessage("你没有权限使用 /plugins 命令。");
     }
 }
