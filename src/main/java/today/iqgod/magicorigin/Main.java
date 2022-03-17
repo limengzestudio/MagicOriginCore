@@ -12,30 +12,16 @@ public final class Main extends JavaPlugin {
     public static FileConfiguration config;
 
     public static boolean PAPI_enabled;
-
-    @Override
-    public void onLoad()
-    {
-        try{
-
-            instance = this;
-
-            saveDefaultConfig();
-
-            System.out.println("[MoCore] 插件加载完成");
-        } catch (Exception e) {
-            System.out.println("[MoCore] 插件加载失败");
-            e.printStackTrace();
-        }
-    }
-
     @Override
     public void onEnable() {
         // Plugin startup logic
         try
         {
+            instance = this;
+
             PAPI_enabled = Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null;
 
+            saveDefaultConfig();
             config = getConfig();
 
             FeatureManager.loadFeatures();
