@@ -31,3 +31,8 @@ permissions:
       mocore.bypass.blacklist:
         description: bypass blacklist
         default: op
+
+  mocore.man:
+        description: ♂
+  mocore.woman:
+        description: ♀
