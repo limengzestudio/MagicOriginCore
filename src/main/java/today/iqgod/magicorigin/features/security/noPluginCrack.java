@@ -19,7 +19,6 @@ public class noPluginCrack implements Listener {
             return;
         }
 
-        e.setMessage("Plugins( " + ChatColor.GREEN + "1145141919810" + ChatColor.RESET + "): \n" +
-                "盗插件死全家");
+        e.setMessage("你没有权限使用 /plugins 命令。");
     }
 }
