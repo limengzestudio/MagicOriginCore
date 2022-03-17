@@ -1,6 +1,5 @@
 package today.iqgod.magicorigin.features;
 
-import jdk.internal.loader.BuiltinClassLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import today.iqgod.magicorigin.Main;
@@ -21,17 +20,14 @@ public class FeatureManager {
 
     public static void loadFeatures()
     {
-        FeatureConfig = (FileConfiguration) Main.config.get("features");
-
-        assert FeatureConfig != null;
         // 基础
-        JoinMessage_Enabled = FeatureConfig.getBoolean("joinMessage.enabled");
+        JoinMessage_Enabled = true;
         // 安全
-        Security_noPluginCrack_Enabled = FeatureConfig.getBoolean("security.noPluginCrack");
-        Security_IntelliKBlackList_Enabled = FeatureConfig.getBoolean("security.IntelliKBlackList");
+        Security_noPluginCrack_Enabled = true;
+        Security_IntelliKBlackList_Enabled = true;
 
 
-        System.out.println("[MoCore] 功能配置加载完成，正在加载功能...");
+        System.out.println("[MoCore] 正在加载功能...");
 
         // 修复
         Bukkit.getServer().getPluginManager().registerEvents(new AntiBookBan(), Main.instance);

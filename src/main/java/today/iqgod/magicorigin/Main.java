@@ -9,7 +9,6 @@ import today.iqgod.magicorigin.features.FeatureManager;
 
 public final class Main extends JavaPlugin {
     public static Plugin instance;
-    public static FileConfiguration config;
 
     public static boolean PAPI_enabled;
     @Override
@@ -20,9 +19,10 @@ public final class Main extends JavaPlugin {
             instance = this;
 
             PAPI_enabled = Bukkit.getPluginManager().getPlugin("PlaceholderAPI") != null;
-
-            saveDefaultConfig();
-            config = getConfig();
+            if(PAPI_enabled && Bukkit.getPluginManager().getPlugin("PlaceholderAPI").isEnabled())
+            {
+                System.out.println("[MoCore] PAPI已启用");
+            }
 
             FeatureManager.loadFeatures();
             CommandManager.setup();
