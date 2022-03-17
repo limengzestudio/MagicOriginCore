@@ -4,6 +4,7 @@ import jdk.internal.loader.BuiltinClassLoader;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import today.iqgod.magicorigin.Main;
+import today.iqgod.magicorigin.features.banFix.AntiBookBan;
 import today.iqgod.magicorigin.features.join.JoinMessage;
 import today.iqgod.magicorigin.features.security.blacklist;
 import today.iqgod.magicorigin.features.security.noPluginCrack;
@@ -31,6 +32,9 @@ public class FeatureManager {
 
 
         System.out.println("[MoCore] 功能配置加载完成，正在加载功能...");
+
+        // 修复
+        Bukkit.getServer().getPluginManager().registerEvents(new AntiBookBan(), Main.instance);
 
         // 基础
         if(JoinMessage_Enabled){    // 玩家加入信息
